@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini App Testing</title>
+    <style>
+        body {
+            background: wheat;
+        }
+
+        #content-box-id {
+            width: 250px;
+            display: block;
+            background: white;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="content-box-id"></div>
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+<script>
+    const tg = window.Telegram.WebApp;
+    const initData = tg.initData;
+    document.getElementById("content-box-id").innerHTML = JSON.stringify(tg, null, 4) + "<br> <br>" + initData;
+</script>
+
+</body>
+</html>
